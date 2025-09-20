@@ -2,12 +2,15 @@
 /**
  * RuyiSDK VS Code Extension - Entry
  *
- * - Registers commands:
- *   - ruyi.detect      (see ./commands/detect)
- *   - ruyi.install     (see ./commands/installRuyi)
- *   - ruyi.news.read   (see ./commands/news)
+ * Responsibilities:
+ * - Register extension commands:
+ *   • ruyi.detect       (./commands/detect)
+ *   • ruyi.install      (./commands/installRuyi)
+ *   • ruyi.news.read    (./commands/news)
+ *   • ruyi.news.showAll (./commands/news)
+ *   • ruyi.news.showUnread (./commands/news)
  *
- * - Triggers a silent detect once on startup.
+ * - Run an automatic detect on activation.
  */
 
 import * as vscode from 'vscode';
