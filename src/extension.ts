@@ -5,16 +5,20 @@
  * - Registers commands:
  *   - ruyi.detect      (see ./commands/detect)
  *   - ruyi.install     (see ./commands/installRuyi)
+ *   - ruyi.news.read   (see ./commands/news)
+ *
  * - Triggers a silent detect once on startup.
  */
 
 import * as vscode from 'vscode';
 import registerDetectCommand from './commands/detect';
 import registerInstallCommand from './commands/installRuyi';
+import registerNewsCommands from './commands/news';
 
 export function activate(context: vscode.ExtensionContext) {
   registerDetectCommand(context);
   registerInstallCommand(context);
+  registerNewsCommands(context);
 
   setImmediate(() => {
     void vscode.commands.executeCommand('ruyi.detect');
